@@ -9,7 +9,7 @@ So far, it works by:
 5. Sending that data over serial to an arduino
 6. Programming the strip with the arduino
 
-## Hardware:
+### Hardware:
 
 + Linux Desktop
 + Arduino (Uno)
