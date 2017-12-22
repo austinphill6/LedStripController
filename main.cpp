@@ -6,21 +6,31 @@ int main() {
     const int pixelY = 1080;
     const int ledX = 16;
     const int ledY = 10;
+    const int blockX = pixelX / ledX;
+    const int blockY = pixelY / ledY;
     unsigned char R = '-';
     unsigned char G = '-';
     unsigned char B = '-';
-    Pixel *pixelPtrArray[X][Y];
+    Pixel *pixelPtrArray[ledX][ledY];
     Pixel *pixPtr = nullptr;
 
-    for(unsigned int i = 0; i < Y; i++) {
-        for(unsigned int j = 0; j < X; j++) {
+    for(unsigned int y = 0; y < ledY; y++) {
+        for(unsigned int x = 0; x < ledX; x++) {
             GetPixel(R, G, B);
-            if ((i < (pixelY / ledY))
-                || (i > (pixelY - (1 + (pixelY / ledY)))
-                || (j < (pixelX / ledX))
-                || (j > (pixelX - (1 + (pixelX / ledX))))) {
+            if ((y < blockY)
+                || (y > (pixelY - (1 + blockY))
+                || (x < blockX)
+                || (x > (pixelX - (1 + blockX))))) {
                     pixPtr = new Pixel(R, G, B);
-                    pixelPtrArray[i][j] = pixPtr;
+                    pixelPtrArray[x][y] = pixPtr;
+            }
+        }
+    }
+
+    for(int i = 0; i < ledY; i++) {
+        for(int j = 0; j < ledX; j++) {
+            if((i == 0) || (i == (ledY - 1)) || (j == 0) || (j == (ledX - 1))) {
+                
             }
         }
     }

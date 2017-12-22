@@ -1,0 +1,7 @@
+1. create array of pixel pointers
+2. store the border data in the array
+3. order the data into blocks of the same size
+4. take a (weighted?) average of each block
+5. store the average in an array of pixels
+6. send each pixel to the arduino over serial
+7. use the arduino to program the led strip
